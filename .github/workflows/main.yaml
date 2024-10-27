@@ -24,6 +24,9 @@ jobs:
       - name: Clear npm cache (optional)
         run: npm cache clean --force
 
+      - name: Install ESLint latest version
+        run: npm install eslint@latest --save-dev
+
       - name: Run ESLint for Code Style Check
         run: npx eslint . || exit 1
 
