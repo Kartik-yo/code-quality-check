@@ -1,0 +1,19 @@
+{
+  "languageOptions": {
+    "globals": {
+      "document": "readonly",
+      "window": "readonly",
+      "console": "readonly"
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    // Your custom rules
+  }
+}
