@@ -1,6 +1,14 @@
 // index.js
-const greet = (name) => {
-  console.log(`Hello, ${name}`);
-};
+// Basic syntax example to avoid any errors
 
-greet("World");
+// Sample function
+function greet(name) {
+  if (!name) {
+    console.error('Name is required!');
+    return;
+  }
+  console.log(`Hello, ${name}!`);
+}
+
+// Example call
+greet('World');
