@@ -1,0 +1,34 @@
+name: Code Quality Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint for Code Style Check
+        run: npx eslint . || exit 1
+
+      - name: Code Quality Check with SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v1
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=Kartik-yo
+            -Dsonar.projectKey=Kartik-yo_code-quality-check
