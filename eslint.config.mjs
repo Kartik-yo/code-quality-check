@@ -18,8 +18,8 @@ export default [
     },
     rules: {
       // Add rules from eslint:recommended
-      "no-unused-vars": "warn",
-      "no-console": "warn",
+      "no-unused-vars": "off",
+      "no-console": "off",
       // Add rules from plugin:react/recommended
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off"
