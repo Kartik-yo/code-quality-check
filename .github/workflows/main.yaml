@@ -16,19 +16,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Using a stable Node.js version that supports modern ESLint
+          node-version: '9'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clear npm cache (optional)
+        run: npm cache clean --force
 
       - name: Install ESLint latest version
         run: npm install eslint@latest --save-dev
 
       - name: Run ESLint for Code Style Check
-        run: npx eslint index.js || exit 1  # Exits with 1 if ESLint finds issues
+        run: npx eslint index.js 
 
       - name: Code Quality Check with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1
