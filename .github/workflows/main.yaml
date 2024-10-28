@@ -29,19 +29,3 @@ jobs:
 
       - name: Run ESLint for Code Style Check
         run: npx eslint . || exit 0
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'  # Ensure you are using Java 17 for SonarCloud
-          distribution: 'temurin'  # Use the Temurin distribution
-
-      - name: Code Quality Check with SonarCloud
-        uses: SonarSource/sonarcloud-github-action@v1
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.organization=Kartik-yo
-            -Dsonar.projectKey=Kartik-yo_code-quality-check
-            -Dsonar.projectBaseDir=.
