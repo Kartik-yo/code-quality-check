@@ -42,9 +42,6 @@ jobs:
       - name: Run ESLint for Code Style Check
         run: npx eslint . || exit 0
 
-      - name: Set JAVA_HOME for SonarCloud
-        run: echo "JAVA_HOME=${{ steps.setup-java.outputs.java-home }}" >> $GITHUB_ENV
-
       - name: Code Quality Check with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1
         env:
@@ -54,3 +51,4 @@ jobs:
           args: >
             -Dsonar.organization=Kartik-yo
             -Dsonar.projectKey=Kartik-yo_code-quality-check
+            -Dsonar.projectBaseDir=.
