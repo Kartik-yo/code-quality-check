@@ -12,23 +12,29 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '9'
-      
+          node-version: '9'  # Set to a stable version that is compatible with your dependencies
+
       - name: Install dependencies
         run: npm install
 
       - name: Clear npm cache (optional)
         run: npm cache clean --force
 
-      - name: Install ESLint latest version
-        run: npm install eslint@9.13.0 --save-dev
+      - name: Install ESLint
+        run: npm install eslint@latest --save-dev  # Use the latest ESLint version
 
       - name: Run ESLint for Code Style Check
         run: npx eslint . || exit 0
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'  # Ensure you are using Java 17 for SonarCloud
+          distribution: 'temurin'  # Use the Temurin distribution
 
       - name: Code Quality Check with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1
