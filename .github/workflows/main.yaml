@@ -25,7 +25,7 @@ jobs:
         run: npm cache clean --force
 
       - name: Install ESLint latest version
-        run: npm install eslint@latest --save-dev
+        run: npm install eslint@9.13.0 --save-dev
 
       - name: Run ESLint for Code Style Check
         run: npx eslint . | exit code 0
