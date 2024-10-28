@@ -42,10 +42,13 @@ jobs:
       - name: Run ESLint for Code Style Check
         run: npx eslint . || exit 0
 
+      - name: Set JAVA_HOME for SonarCloud
+        run: echo "JAVA_HOME=${{ steps.setup-java.outputs.java-home }}" >> $GITHUB_ENV
+
       - name: Code Quality Check with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1
         env:
-          JAVA_HOME: ${{ env.JAVA_HOME }}
+          JAVA_HOME: ${{ env.JAVA_HOME }}  # This should now point to the correct path
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
