@@ -19,6 +19,9 @@ jobs:
           node-version: '16'  # Using a stable Node.js version that supports modern ESLint
 
       - name: Install dependencies
+        run: npm install --prefix ./path-to-subdirectory
+
+      - name: Install dependencies
         run: npm install
 
       - name: Install ESLint latest version
