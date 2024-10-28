@@ -12,7 +12,6 @@
     }
   },
   "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
   "rules": {
     // Your custom rules
   }
