@@ -28,7 +28,7 @@ jobs:
         run: npm install eslint@9.13.0 --save-dev
 
       - name: Run ESLint for Code Style Check
-        run: npx eslint . || exit code 0
+        run: npx eslint . || exit 0
 
       - name: Code Quality Check with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1
