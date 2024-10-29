@@ -6,7 +6,7 @@ This repository is a small project to demonstrate code quality checks using [ESL
 ```
 code-quality-checker/ 
 ├── index.js # A sample JavaScript file with intentional lint errors 
-├── .eslintrc.json # ESLint configuration file  
+├── eslint.config.mjs # ESLint configuration file  
 └── .github/ 
        └── workflows/ 
               └── eslint.yml # GitHub Actions workflow file for automated linting
