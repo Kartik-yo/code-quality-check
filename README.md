@@ -3,14 +3,14 @@
 This repository is a small project to demonstrate code quality checks using [ESLint](https://eslint.org/), a static analysis tool for identifying and fixing problematic patterns in JavaScript code. It includes basic configurations, sample code, and a GitHub Actions workflow to automate the linting process on every push.
 
 ## Project Structure
-
+```
 code-quality-checker/ 
 ├── index.js # A sample JavaScript file with intentional lint errors 
 ├── .eslintrc.json # ESLint configuration file  
 └── .github/ 
        └── workflows/ 
               └── eslint.yml # GitHub Actions workflow file for automated linting
-
+```
 ## Getting Started
 
 ### Prerequisites
